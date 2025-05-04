@@ -211,7 +211,7 @@ def simulate_tob():
 
         mode = "Hard Mode" if is_hmt else "Regular"
         result_text = f"Theatre of Blood {mode} Simulator\n"
-        result_text += "Disclaimer: This calculator assumes deathless raids. Sorry 416 players.\n\n"
+        result_text += "Disclaimer: This calculator assumes deathless raids\n\n"
         result_text += f"Simulated {num_raids:,} raids with {team_size} team members\n"
         result_text += f"Unique chance per raid: {unique_chance:.2%}\n"
         result_text += f"Team uniques: {team_uniques:,}\n"
@@ -261,6 +261,14 @@ bg_image = Image.open(resource_path("background.jpg"))
 bg_image = bg_image.resize((800, 600))
 bg_photo = ImageTk.PhotoImage(bg_image)
 
+bg_cox_image = Image.open(resource_path("bg_cox.jpg"))
+bg_cox_image = bg_cox_image.resize((800, 600))
+bg_cox_photo = ImageTk.PhotoImage(bg_cox_image)
+
+bg_tob_image = Image.open(resource_path("bg_tob.jpg"))
+bg_tob_image = bg_tob_image.resize((800, 600))
+bg_tob_photo = ImageTk.PhotoImage(bg_tob_image)
+
 custom_canvas = tk.Canvas(custom_tab, width=800, height=600)
 custom_canvas.pack(fill="both", expand=True)
 custom_canvas.create_image(0, 0, image=bg_photo, anchor="nw")
@@ -279,7 +287,7 @@ custom_canvas.create_window(400, 280, window=text_output)
 
 cox_canvas = tk.Canvas(cox_tab, width=800, height=600)
 cox_canvas.pack(fill="both", expand=True)
-cox_canvas.create_image(0, 0, image=bg_photo, anchor="nw")
+cox_canvas.create_image(0, 0, image=bg_cox_photo, anchor="nw")
 
 entry_cox_points = tk.Entry(window)
 entry_cox_raids = tk.Entry(window)
@@ -295,7 +303,7 @@ cox_canvas.create_window(400, 280, window=text_cox_output)
 
 tob_canvas = tk.Canvas(tob_tab, width=800, height=600)
 tob_canvas.pack(fill="both", expand=True)
-tob_canvas.create_image(0, 0, image=bg_photo, anchor="nw")
+tob_canvas.create_image(0, 0, image=bg_tob_photo, anchor="nw")
 
 hmt_var = tk.BooleanVar()
 hmt_checkbox = tk.Checkbutton(window, text="Hard Mode Theatre", variable=hmt_var)

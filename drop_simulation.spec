@@ -5,7 +5,7 @@ a = Analysis(
     ['drop_simulation.py'],
     pathex=[],
     binaries=[],
-    datas=[('background.jpg', '.')],
+    datas=[('background.jpg', '.'), ('bg_cox.jpg', '.'), ('bg_tob.jpg', '.')],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},
