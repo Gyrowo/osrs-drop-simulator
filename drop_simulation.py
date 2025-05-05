@@ -60,15 +60,16 @@ def calculate_cox_chance(points):
 
 
 def roll_cox_item():
-    total_weight = sum(1 / rate for rate in COX_ITEMS.values())
+    total_weight = sum(COX_ITEMS.values())
     roll = random.random() * total_weight
     current_weight = 0
 
     for item, rate in COX_ITEMS.items():
-        current_weight += 1 / rate
+        current_weight += rate
         if roll < current_weight:
             return item
     return list(COX_ITEMS.keys())[0]
+
 
 
 def roll_tob_item(is_hmt):
